@@ -44,36 +44,36 @@ export default function Home() {
     <main className="w-full items-center justify-center">
       {/* Khuc tren */}
       <div className="flex flex-col w-full items-center px-4 sm:px-8">
-  <div className="flex text-lg px-2 sm:px-0">
-    <span className="font-semibold">{data.chure}</span>
-    <img src="images/heart.png" className="w-6 h-6 mx-2"></img>
-    <span className="font-semibold">{data.codau}</span>
-  </div>
-  <div className='flex flex-row items-center justify-center my-4'>
-    <div className='border border-[#C5C5CF] w-24 sm:w-36 mr-2 sm:mr-5'></div>
-    <div className='text-[#C5C5CF] text-sm sm:text-base font-medium'>Just Married</div>
-    <div className='border border-[#C5C5CF] w-24 sm:w-36 ml-2 sm:ml-5'></div>
-  </div>
-</div>
-<div className='border border-[#C5C5CF] w-full my-4'></div>
-{/* Navigation */}
-<div className="w-full flex justify-center items-center">
-  <div className="flex flex-wrap justify-center">
-    <a href="#couple" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Cặp đôi</a>
-    <a href="#loveStory" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Chuyện tình yêu</a>
-    <a href="#weddingAlbum" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Album hình cưới</a>
-    <a href="#weddingEvent" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Sự kiện cưới</a>
-    <a href="#congratulations" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Mừng cưới</a>
-  </div>
-</div>
+        <div className="flex text-lg px-2 sm:px-0">
+          <span className="font-semibold">{data.chure}</span>
+          <img src="images/heart.png" className="w-6 h-6 mx-2"></img>
+          <span className="font-semibold">{data.codau}</span>
+        </div>
+        <div className='flex flex-row items-center justify-center my-4'>
+          <div className='border border-[#C5C5CF] w-24 sm:w-36 mr-2 sm:mr-5'></div>
+          <div className='text-[#C5C5CF] text-sm sm:text-base font-medium'>Just Married</div>
+          <div className='border border-[#C5C5CF] w-24 sm:w-36 ml-2 sm:ml-5'></div>
+        </div>
+      </div>
+      <div className='border border-[#C5C5CF] w-full my-4'></div>
+      {/* Navigation */}
+      <div className="w-full flex justify-center items-center">
+        <div className="flex flex-wrap justify-center">
+          <a href="#couple" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Cặp đôi</a>
+          <a href="#loveStory" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Chuyện tình yêu</a>
+          <a href="#weddingAlbum" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Album hình cưới</a>
+          <a href="#weddingEvent" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Sự kiện cưới</a>
+          <a href="#congratulations" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Mừng cưới</a>
+        </div>
+      </div>
       {/* Slide show */}
-      <div style={{ position: 'relative', width: '100%', height: '0', paddingBottom: '56.25%' }}>
-  <iframe 
-    src="https://streamable.com/e/q1oq9f?muted=1&nocontrols=1" 
+      <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+  <iframe
+    src="https://streamable.com/e/q1oq9f?muted=1&nocontrols=1"
     style={{ border: 'none', width: '100%', height: '100%', position: 'absolute', left: '0', top: '0', overflow: 'hidden' }}
-    allow="autoplay;fullscreen" 
+    allow="autoplay;fullscreen"
     allowFullScreen
-    width="100%" 
+    width="100%"
     height="100%">
   </iframe>
 </div>
@@ -166,7 +166,7 @@ export default function Home() {
       {/* Album */}
       <div id="weddingAlbum"></div>
       <Album ></Album>
-      <div  id="congratulations" className="w-full flex flex-col items-center justify-center bg-[#F6F1F3] py-8">
+      <div id="congratulations" className="w-full flex flex-col items-center justify-center bg-[#F6F1F3] py-8">
         <img src="images/rose.png" className='h-24 w-auto'></img>
         <div className="text-center text-xl font-bold">Hộp mừng cưới</div>
         <div className="w-full flex items-center justify-center bg-[#F6F1F3] py-8 sm:py-16 px-4 text-center">

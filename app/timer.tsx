@@ -13,35 +13,29 @@ const CountdownTimer = () => {
         const targetDate = new Date('July 14, 2024 00:00:00').getTime();
         const now = new Date().getTime();
         const difference = targetDate - now;
-
-        let timeLeft = {
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        };
-
+    
         if (difference > 0) {
-          timeLeft = {
+          const timeLeft = {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
             hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
             minutes: Math.floor((difference / 1000 / 60) % 60),
             seconds: Math.floor((difference / 1000) % 60),
           };
+    
+          setTimeLeft(timeLeft);
+        } else {
+          // Time's up, stop the timer
+          clearInterval(timer);
+          setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         }
-
-        return timeLeft;
       };
-
-      // Update time left immediately and every second
-      setTimeLeft(calculateTimeLeft());
-      const timer = setInterval(() => {
-        setTimeLeft(calculateTimeLeft());
-      }, 1000);
-
-      // Cleanup on component unmount
+    
+      // Call the function every second
+      const timer = setInterval(calculateTimeLeft, 1000);
+    
+      // Clear interval on component unmount
       return () => clearInterval(timer);
-    }, []); // Empty dependency array means this effect runs only once on mount
+    }, []);
 
   return (
     <div className="flex justify-center space-x-4 py-4">

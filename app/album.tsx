@@ -1,5 +1,5 @@
-import { Description } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 const Album = () => {
   const data = {
@@ -61,8 +61,15 @@ const Album = () => {
     }
   }, [transitioning]);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => goToNext(),
+    onSwipedRight: () => goToPrevious(),
+    preventScrollOnSwipe: false,
+    trackMouse: true,
+  });
+
   return (
-    <div className="w-full flex flex-wrap justify-center items-center py-8 relative">
+    <div {...handlers} className="w-full flex flex-wrap justify-center items-center py-8 relative">
       <h2 className="w-full text-2xl font-bold text-center mb-4">Wedding Album</h2>
       <div className="album-description w-full text-center p-4">
         <p className="text-lg">{data.description}</p>
@@ -80,7 +87,6 @@ const Album = () => {
       <div className="w-full flex justify-center overflow-hidden mx-10">
         <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}>
           {albumImages.map((image, index) => (
-            // Adjusted class from w-1/3 to w-1/4 for smaller images
             <img key={index} src={image} alt={`Wedding Photo ${index + 1}`} className="w-1/4 h-auto object-cover m-1 transition-opacity duration-500" />
           ))}
         </div>
