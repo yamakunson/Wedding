@@ -1,6 +1,9 @@
 "use client"
+import React, { useState, useEffect } from 'react';
 import Calendar from './calendar';
 import Album from './album';
+import LoveRain from './LoveRain';
+import MusicPlayer from './music_player';
 export default function Home() {
   const data = {
     codau: "Nguyệt Hà",
@@ -38,26 +41,60 @@ export default function Home() {
       chinhanh: "Vietcombank Nghệ An"
     }
   }
+  const [screenWidth, setScreenWidth] = useState(0);
+  const albumImages = [
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719224634/_1_jy6vkl.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719224634/_2_geuyrf.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719224634/_3_uq8rmk.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719224636/_10_vthdcz.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719225109/_11_qag8fl.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719225112/_12_e08yov.jpg",
+    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719225112/_13_jk00rh.jpg",
+    // Add more image paths as needed
+  ];
+  const images = albumImages.map(image => `url("${image}")`);
+  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [imageIndex, setImageIndex] = useState(0);
+  useEffect(() => {
+    const updateScreenWidth = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', updateScreenWidth);
+    updateScreenWidth();
+    return () => window.removeEventListener('resize', updateScreenWidth);
+  }, []); 
+  useEffect(() => {
+    // Change the background image every 2 seconds
+    const interval = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentImage(images[imageIndex]);
+    }, 3000);
 
-
+    // Clear the interval on component unmount
+    return () => clearInterval(interval);
+  }, [imageIndex, images]);
+  const backgroundImage = screenWidth > 768 
+    ? "url('/images/anh_bia.jpg')" // Image for PC
+    : "url('/images/anh_bia1.jpg')"; // Image for mobile
   return (
     <main className="w-full items-center justify-center">
       {/* Khuc tren */}
-      <div className="flex flex-col w-full items-center px-4 sm:px-8">
-        <div className="flex text-lg px-2 sm:px-0">
-          <span className="font-semibold">{data.chure}</span>
-          <img src="images/heart.png" className="w-6 h-6 mx-2"></img>
-          <span className="font-semibold">{data.codau}</span>
+      <LoveRain />
+      <MusicPlayer/>
+
+      <div className="flex flex-col w-full items-center px-4 sm:px-8 bg-[#ffd1dc] py-6">
+        <div className="flex text-lg px-2 sm:px-0 mt-4">
+          <span className="dancing-script text-5xl">{data.chure}</span>
+          <img src="images/rose.png" className="w-16 h-auto mx-2"></img>
+          <span className="dancing-script text-5xl">{data.codau}</span>
         </div>
-        <div className='flex flex-row items-center justify-center my-4'>
-          <div className='border border-[#C5C5CF] w-24 sm:w-36 mr-2 sm:mr-5'></div>
-          <div className='text-[#C5C5CF] text-sm sm:text-base font-medium'>Just Married</div>
-          <div className='border border-[#C5C5CF] w-24 sm:w-36 ml-2 sm:ml-5'></div>
+        <div className='flex flex-row items-center justify-center my-4 parisienne'>
+          <div className='border border-[#000] w-24 sm:w-36 mr-2 sm:mr-5'></div>
+          <div className='text-[#000000] text-3xl'>Just Married</div>
+          <div className='border border-[#000] w-24 sm:w-36 ml-2 sm:ml-5'></div>
         </div>
       </div>
-      <div className='border border-[#C5C5CF] w-full my-4'></div>
+      <div className='border border-[#C5C5CF] w-full'></div>
       {/* Navigation */}
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center inter">
         <div className="flex flex-wrap justify-center">
           <a href="#couple" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Cặp đôi</a>
           <a href="#loveStory" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Chuyện tình yêu</a>
@@ -67,17 +104,42 @@ export default function Home() {
         </div>
       </div>
       {/* Slide show */}
-      <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
-  <iframe
-    src="https://streamable.com/e/q1oq9f?muted=1&nocontrols=1"
-    style={{ border: 'none', width: '100%', height: '100%', position: 'absolute', left: '0', top: '0', overflow: 'hidden' }}
-    allow="autoplay;fullscreen"
-    allowFullScreen
-    width="100%"
-    height="100%">
-  </iframe>
-</div>
+      <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100vh',
+      backgroundImage: currentImage,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center 10%',
+      zIndex: -99,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      transition: 'background-image 1s ease-in-out', // Smooth transition for background image change
+      opacity: 1,
+      filter: 'brightness(0.5)',
+    }} className='fade-animation'> 
+    </div>
 
+
+<div className="w-full flex items-center justify-center bg-transparent py-8 sm:py-16 px-4 sm:px-48" style={{ height: 'auto', minHeight: '80vh' }}>
+        <div className='flex flex-col sm:flex-row w-full h-full space-y-4 sm:space-y-0 sm:space-x-4'>
+          {/* Left */}
+          <div className='w-full sm:p-12 p-4 border border-white'>
+            <div className='border-[#EF9C66] border-4 h-full flex flex-col items-center justify-center space-y-4 p-4 rounded-xl'>
+              <div>{data.tencodau}</div>
+              <div>{data.ttcodau}</div>
+            </div>
+          </div>
+          {/* Right */}
+          <div className='w-full sm:p-12 p-4 border border-white'>
+            <div className='border-[#EF9C66] border-4 h-full flex flex-col items-center justify-center space-y-4 p-4 rounded-xl'>
+              <div>{data.tenchure}</div>
+                <div>{data.ttchure}</div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Countdown */}
       <div className="w-full flex items-center justify-center bg-[#F6F1F3] py-8 sm:py-16 px-4 sm:px-48" style={{ height: 'auto', minHeight: '80vh' }}>
         <div className='flex flex-col sm:flex-row w-full h-full space-y-4 sm:space-y-0 sm:space-x-4'>
@@ -138,7 +200,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row w-full max-w-4xl space-y-4 sm:space-y-0 sm:space-x-4">
             {/* Left */}
             <div className="w-full sm:w-1/2 p-4 border border-white flex flex-col items-center justify-center space-y-4">
-              <div className="text-lg font-semibold">Lễ cưới nhà gái</div>
+              <div className="text-lg font-semibold">Lễ vu quy</div>
               <div className="w-48 h-48 relative">
                 <img src="images/codau_vuong.jpg" className="absolute object-cover w-full h-full" alt="Lễ cưới nhà trai" />
               </div>
@@ -150,7 +212,7 @@ export default function Home() {
             </div>
             {/* Right */}
             <div className="w-full sm:w-1/2 p-4 border border-white flex flex-col items-center justify-center space-y-4">
-              <div className="text-lg font-semibold">Lễ cưới nhà trai</div>
+              <div className="text-lg font-semibold">Lễ tân hôn</div>
               <div className="w-48 h-48 relative">
                 <img src="images/chure.jpg" className="absolute object-cover w-full h-full" alt="Lễ cưới nhà trai" />
               </div>
@@ -162,7 +224,20 @@ export default function Home() {
             </div>
           </div>
         </div>
+          {/* Tiệc thành hôn */}
+          <div className="w-full sm:w-1/2 p-4 border border-white flex flex-col items-center justify-center space-y-4">
+              <div className="text-lg font-semibold">Tiệc thành hôn</div>
+              <div className="w-48 h-48 relative">
+                <img src="images/chure.jpg" className="absolute object-cover w-full h-full" alt="Lễ cưới nhà trai" />
+              </div>
+              <div className='text-center'>{data.thoigian_trai}</div>
+              <div className='text-center'>{data.diachi_trai}</div>
+              <a href="https://maps.app.goo.gl/DgvoNkLGkqV9efWN7" className="rounded-full px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
+                Địa chỉ tiệc cưới
+              </a>
+            </div>
       </div>
+      
       {/* Album */}
       <div id="weddingAlbum"></div>
       <Album ></Album>
@@ -196,6 +271,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <footer style={{width: '100%', textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0' }}>
+    Designed by <span className="font-medium">em Sơn</span>
+  </footer>
     </main>
   );
 }

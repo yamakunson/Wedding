@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.inter {
+  font-family: var(--font-Inter)
+}
+.parisienne{
+  font-family: var(--font-Parisienne);
+}
+.dancing-script{
+  font-family: var(--font-DancingScript);
+}
 .transition-transform {
   transition: transform 0.5s ease-in-out;
 }
@@ -11,4 +20,52 @@
 }
 html {
   scroll-behavior: smooth;
+}
+.love-rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  top: -5%;
+  font-size: 24px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-animation {
+  animation: fade 1s ease-in-out;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Line width */
+  background-color: #000; /* Line color */
+}
+
+@media (max-width: 768px) {
+  .timeline-container::before {
+    display: none; /* Hide the line on smaller screens if needed */
+  }
 }
