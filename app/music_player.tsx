@@ -2,15 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const MusicPlayer = () => {
   const [isMuted, setIsMuted] = useState(false);
-  const audioRef = useRef(null); // Reference to the audio element
+  // Specify HTMLAudioElement as the type for the audio element reference
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     // Play or pause the audio based on isMuted state
-    if (audioRef.current) {
-      if (isMuted) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
+    const audio = audioRef.current;
+    if (audio) {
+      const playPromise = isMuted ? audio.pause() : audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Handle audio playback error (e.g., file not found or decoding error)
+          console.error("Audio playback failed:", error);
+        });
       }
     }
   }, [isMuted]);
@@ -30,12 +34,11 @@ const MusicPlayer = () => {
           padding: '10px',
           backgroundColor: '#f0f0f0',
           border: 'none',
-          borderColor:'#FF4B4B',
           borderRadius: '50%',
           cursor: 'pointer',
         }}
       >
-        <img src={isMuted ? "/images/Sound off.png" : "/images/Sound on.png"} alt={isMuted ? 'Unmute' : 'Mute'} style={{ width: '24px', height: '24px' }} />
+        <img src={isMuted ? "/images/Sound off.png" : "/images/Sound on.png"} alt={isMuted ? 'Click to unmute' : 'Click to mute'} style={{ width: '24px', height: '24px' }} />
       </button>
     </div>
   );
