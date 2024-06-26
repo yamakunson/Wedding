@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const MusicPlayer = () => {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   // Specify HTMLAudioElement as the type for the audio element reference
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -32,9 +32,10 @@ const MusicPlayer = () => {
           right: '20px',
           zIndex: 1000,
           padding: '10px',
-          backgroundColor: '#f0f0f0',
-          border: 'none',
+          backgroundColor: 'transparent',
+          border: 'solid',
           borderRadius: '50%',
+          borderColor: '#ff0000',
           cursor: 'pointer',
         }}
       >

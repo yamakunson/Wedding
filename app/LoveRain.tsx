@@ -24,7 +24,7 @@ const LoveRain = () => {
           style={{
             left: `${heart.startX}vw`,
             animationDuration: `${heart.animationDuration}s`,
-            zIndex: heart.id,
+            zIndex: 99,
           }}
         />
       ))}

@@ -13,26 +13,26 @@ const Calendar = () => {
 
   // Days of July
   for (let i = 1; i <= totalDays; i++) {
-    const dayClass = i === 14 ? "border p-2 bg-yellow-200 rounded-md flex items-center justify-center" : "border p-2 rounded-md flex items-center justify-center"; // Highlight July 14th and center content
+    const dayClass = i === 14 ? "font-bold text-[#fff700] p-2 bg-heart rounded-md flex items-center justify-center" : " p-2 rounded-md flex items-center justify-center";
     days.push(<div key={`current-${i}`} className={dayClass}>{i}</div>);
 }
 
   return (
-    <div className='h-full flex flex-col items-center'>
-      {/* Header displaying the month and year */}
-      <div className="text-2xl font-bold py-4">
-        Tháng 7 / 2024
-      </div>
-      <div className='border border-white w-full mx-4 mb-4'></div>
-      <div className="grid grid-cols-7 gap-1 w-full">
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
-          <div key={day} className="border p-2 font-bold">{day}</div>
-        ))}
-        {days}
-      </div>
-      <div className='border border-white w-full mx-4 mt-4'></div>
-<CountdownTimer></CountdownTimer>
-    </div>
+<div className='h-full flex flex-col items-center text-[#fff] ' >
+  {/* Header displaying the month and year */}
+  <div className="text-2xl noto-serif py-4">
+    Tháng 7 / 2024
+  </div>
+  <div className='border border-white w-full mx-4 mb-4'></div>
+  <div className="grid grid-cols-7 gap-1 w-full bg-cover bg-center text-center quicksand" >
+    {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
+      <div key={day} className="border p-2 font-bold">{day}</div>
+    ))}
+    {days}
+  </div>
+  <div className='border border-white w-full mx-4 mt-4'></div>
+  <CountdownTimer></CountdownTimer>
+</div>
   );
 };
 

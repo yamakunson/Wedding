@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
-
+import Fancybox from './Fancybox';
 const Album = () => {
   const data = {
     description: `Vì yêu, ta có thể cố gắng. Và cố gắng để tạo dáng chụp ảnh đã chứng minh điều đó. 
@@ -69,8 +69,8 @@ const Album = () => {
   });
 
   return (
-    <div {...handlers} className="w-full flex flex-wrap justify-center items-center py-8 relative">
-      <h2 className="w-full text-2xl font-bold text-center mb-4">Wedding Album</h2>
+    <div {...handlers} className="w-full flex flex-wrap justify-center items-center py-8 relative quicksand">
+      <h2 className="w-full text-2xl font-bold text-center mb-4 dancing-script">Wedding Album</h2>
       <div className="album-description w-full text-center p-4">
         <p className="text-lg">{data.description}</p>
       </div>
@@ -87,10 +87,30 @@ const Album = () => {
       <div className="w-full flex justify-center overflow-hidden mx-10">
         <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}>
           {albumImages.map((image, index) => (
-            <img key={index} src={image} alt={`Wedding Photo ${index + 1}`} className="w-1/4 h-auto object-cover m-1 transition-opacity duration-500" />
+            <img key={index} src={image} alt={`Wedding Photo ${index + 1}`} className="md:w-1/4 w-1/2 h-auto object-cover m-1 transition-opacity duration-500" />
           ))}
         </div>
       </div>
+      <div>
+      {/* <Fancybox
+  options={{
+    Carousel: {
+      infinite: false,
+    },
+  }}
+>
+  {albumImages.map((image, index) => (
+    <a key={index} data-fancybox="gallery" href={image}>
+      <img
+        alt={`Wedding Photo ${index + 1}`}
+        src={image} // Assuming the same URL for simplicity; replace with thumbnail URL if available
+        width="200"
+        height="150"
+      />
+    </a>
+  ))}
+</Fancybox> */}
+    </div>
     </div>
   );
 };

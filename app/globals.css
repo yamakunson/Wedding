@@ -11,6 +11,12 @@
 .dancing-script{
   font-family: var(--font-DancingScript);
 }
+.noto-serif{
+  font-family: var(--font-NotoSerifDisplay);
+}
+.quicksand{
+  font-family: var(--font-Quicksand);
+}
 .transition-transform {
   transition: transform 0.5s ease-in-out;
 }
@@ -51,7 +57,7 @@ html {
 }
 
 .fade-animation {
-  animation: fade 1s ease-in-out;
+  animation: fade 2s ease-in-out;
 }
 .timeline-container::before {
   content: '';
@@ -63,9 +69,22 @@ html {
   width: 2px; /* Line width */
   background-color: #000; /* Line color */
 }
-
+.bg-heart {
+  background-image: url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719390462/path26_lztoby.svg'); /* Update with the actual path to your heart image */
+  background-size: cover; /* Cover the entire area of the element */
+  background-position: center; /* Center the background image */
+}
 @media (max-width: 768px) {
   .timeline-container::before {
     display: none; /* Hide the line on smaller screens if needed */
+  }
+  .header-text {
+    font-size: 36px; /* Adjust this value as needed */
+  }
+  .marry-text{
+    font-size: 24px;
+  }
+  .slideshow{
+    height: '50vh';
   }
 }
