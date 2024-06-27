@@ -288,7 +288,7 @@ export default function Home() {
   </div>
 </div>
 {/* Video */}
-<div className='flex flex-col mt-4 items-center w-full'>
+{/* <div className='flex flex-col mt-4 items-center w-full'>
       <h2 className="w-full text-2xl font-bold text-center noto-serif mb-4 ">Wedding Video</h2>
       </div>
       <div id="weddingVideo"></div>
@@ -302,7 +302,7 @@ export default function Home() {
       <div className="album-description w-full text-center p-4">
         <p className="text-lg">Tắt một nhạc nếu bị trùng nhau nhé {"<3"} </p>
       </div>
-      </div>
+      </div> */}
       <footer style={{ width: '100%', textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0' }}>
         Designed by <span className="font-medium">em Sơn</span>
       </footer>
