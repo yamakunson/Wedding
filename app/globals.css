@@ -109,9 +109,6 @@ html {
   .timeline-container::before {
     display: none; /* Hide the line on smaller screens if needed */
   }
-  .header-text {
-    font-size: 36px; /* Adjust this value as needed */
-  }
   .marry-text{
     font-size: 24px;
   }

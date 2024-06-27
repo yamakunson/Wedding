@@ -75,9 +75,9 @@ export default function Home() {
       <div className="flex flex-col w-full items-center px-2 sm:px-4 bg-[#ffd1dc] py-2 quicksand">
         {/* header */}
         <div className="flex text-lg px-2 sm:px-0 mt-4">
-          <span className="dancing-script text-4xl header-text">{data.chure}</span>
-          <img src="images/heart_top.png" className="w-auto h-8 mx-2"></img>
-          <span className="dancing-script text-4xl header-text">{data.codau}</span>
+          <span className="dancing-script text-4xl sm:text-3xl header-text">{data.chure}</span>
+          <img src="images/heart_top.png" className="w-auto h-6 mx-2"></img>
+          <span className="dancing-script text-4xl sm:text-3xl header-text">{data.codau}</span>
         </div>
         <div className='flex flex-row items-center justify-center my-4 parisienne'>
           <div className='flex-grow border border-[#000] mr-2 sm:mr-5'></div>
@@ -116,15 +116,7 @@ export default function Home() {
         // filter: 'brightness(0.5)',
       }} className='fade-animation'>
   <div style={{ color: 'white', textAlign: 'center'}} className='flex flex-col items-center justify-center'>
-    <img src="/images/picture1.png" className='w-full h-auto sm:w-1/2'></img>
-  {/* <div className="flex text-lg px-2 sm:px-0 mt-4">
-          <span className="dancing-script text-4xl header-text">{data.chure} & {data.codau}</span>
-        </div>
-        <div className='flex flex-row items-center justify-center my-4 parisienne'>
-          <div className='flex-grow border border-[#fff] mr-2 sm:mr-5'></div>
-          <div className='text-[#fff] text-xl px-2 marry-text'>14 Tháng 7 Năm 2024</div>
-          <div className='flex-grow border border-[#fff] ml-2 sm:ml-5'></div>
-        </div> */}
+    <img src="https://res.cloudinary.com/dzm879qpm/image/upload/v1719503029/Picture1_tvilbe.png" className='w-full h-auto sm:w-1/2'></img>
   </div>
 </div>
 
