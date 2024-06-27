@@ -1,5 +1,4 @@
 import React from 'react';
-import CountdownTimer from './timer';
 const Calendar = () => {
   const startDay = new Date(2024, 6, 1).getDay(); // July 1, 2024 - Remember, months are 0-indexed
   const totalDays = 31; // July has 31 days
@@ -13,7 +12,7 @@ const Calendar = () => {
 
   // Days of July
   for (let i = 1; i <= totalDays; i++) {
-    const dayClass = i === 14 ? "font-bold text-[#fff700] p-2 bg-heart rounded-md flex items-center justify-center" : " p-2 rounded-md flex items-center justify-center";
+    const dayClass = i === 14 ? "font-bold text-[#ffffff] p-2 bg-heart rounded-md flex items-center justify-center" : " p-2 rounded-md flex items-center justify-center";
     days.push(<div key={`current-${i}`} className={dayClass}>{i}</div>);
 }
 
@@ -21,7 +20,7 @@ const Calendar = () => {
 <div className='h-full flex flex-col items-center text-[#fff] ' >
   {/* Header displaying the month and year */}
   <div className="text-2xl noto-serif py-4">
-    Tháng 7 / 2024
+    THÁNG 7 / 2024
   </div>
   <div className='border border-white w-full mx-4 mb-4'></div>
   <div className="grid grid-cols-7 gap-1 w-full bg-cover bg-center text-center quicksand" >
@@ -30,8 +29,6 @@ const Calendar = () => {
     ))}
     {days}
   </div>
-  <div className='border border-white w-full mx-4 mt-4'></div>
-  <CountdownTimer></CountdownTimer>
 </div>
   );
 };

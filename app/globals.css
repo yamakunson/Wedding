@@ -17,6 +17,10 @@
 .quicksand{
   font-family: var(--font-Quicksand);
 }
+.lobster{
+  font-family: var(--font-Lobster);
+
+}
 .transition-transform {
   transition: transform 1s ease-in-out;
 }
@@ -69,10 +73,37 @@ html {
   width: 2px; /* Line width */
   background-color: #000; /* Line color */
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.spin {
+  animation: spin 20s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .bg-heart {
-  background-image: url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719390462/path26_lztoby.svg'); /* Update with the actual path to your heart image */
+  background-image: url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719496305/vecteezy_realistic-3d-design-icon-heart-symbol-love_21392635_yidfua.png'); /* Update with the actual path to your heart image */
   background-size: cover; /* Cover the entire area of the element */
   background-position: center; /* Center the background image */
+  animation: pulse 1s infinite;
 }
 @media (max-width: 768px) {
   .timeline-container::before {
@@ -87,4 +118,16 @@ html {
   .slideshow{
     height: '50vh';
   }
+}
+@keyframes bubble-float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh); /* Move the bubble from bottom to top */
+  }
+}
+
+.bubble {
+  animation-timing-function: linear;
 }

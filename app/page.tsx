@@ -5,6 +5,7 @@ import LoveRain from './LoveRain';
 import MusicPlayer from './music_player';
 import WeddingAlbum from './weddingAlbum';
 import Aos from 'aos';
+import CountdownTimer from './timer';
 import 'aos/dist/aos.css';
 export default function Home() {
   const data = {
@@ -14,8 +15,8 @@ export default function Home() {
     tenchure: "? Đăng Chung",
     chacodau: "Nguyễn Văn Khang",
     mecodau: "Sầm Thị Thủy",
-    chachure: "? ? ?",
-    mechure: "? ? ?",
+    chachure: "Lê Đăng Quang",
+    mechure: "Nguyễn Thị Hướng",
     ttchure: `Chàng trai sở hữu gen di truyền rất hay ngại ngùng. Đa tài nhưng nói không với 
     showbiz. Tương lai sống và làm việc theo chủ nghĩa vô sản.`,
     ttcodau: `Cô gái dù sợ béo nhưng đam mê ẩm thực. Sống và làm việc theo con 
@@ -27,28 +28,23 @@ export default function Home() {
       { date: "Date 4", description: "Event 4 Description", image: "images/chure.jpg" },
     ],
     thoigian_trai: "11:00 10/03/2023",
-    thoigian_gai: "11:00 17/03/2023",
+    thoigian_gai: "18:00 14/07/2024",
     diachi_trai: "Quận 7, Thành Phố Hồ Chí Minh",
-    diachi_gai: "46D/7/5 đường Gò Cát, phường Phú Hữu, Thành Phố Thủ Đức, Thành Phố Hồ Chí Minh",
+    diachi_gai: "Trung tâm tiệc cưới Louis Center Sảnh Diamond 1, 38 Lâm Văn Bền, phường Tân Thuận Tây, Quận 7, Thành Phố Hồ Chí Minh",
     videodescription:`Qua video clip này, chúng tôi muốn gửi đến mọi người những hình ảnh đẹp nhất của ngày cưới của chúng tôi.`,
     nganhang_codau: {
-      nganhang: "Vietcombank",
+      nganhang: "Techcombank",
       tentaikhoan: "Nguyễn Thị Nguyệt Hà",
-      sotaikhoan: "123456789",
-      chinhanh: "Vietcombank Nghệ An"
+      sotaikhoan: "19035471883017",
     },
     nganhang_chure: {
       nganhang: "Vietcombank",
-      tentaikhoan: "Đặng Chung",
-      sotaikhoan: "123456789",
-      chinhanh: "Vietcombank Nghệ An"
+      tentaikhoan: "Lê Đăng Chung",
+      sotaikhoan: "0181003653169",
     }
   }
   const albumImages = [
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_1_sua_w5kdrv.jpg",
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_2_sua_cliwdh.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457601/_3_sua_uxpo1l.jpg",
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457689/_10_sua_gdjd2h.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_11_sua_ehbbky.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_12_sua_njsupy.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457603/_13_sua_jurkwx.jpg",
@@ -76,11 +72,11 @@ export default function Home() {
       <LoveRain />
       <MusicPlayer />
 
-      <div className="flex flex-col w-full items-center px-4 sm:px-8 bg-[#ffd1dc] py-6">
+      <div className="flex flex-col w-full items-center px-2 sm:px-4 bg-[#ffd1dc] py-2 quicksand">
         {/* header */}
         <div className="flex text-lg px-2 sm:px-0 mt-4">
           <span className="dancing-script text-4xl header-text">{data.chure}</span>
-          <img src="images/rose.png" className="w-auto h-12 mx-2"></img>
+          <img src="images/heart_top.png" className="w-auto h-8 mx-2"></img>
           <span className="dancing-script text-4xl header-text">{data.codau}</span>
         </div>
         <div className='flex flex-row items-center justify-center my-4 parisienne'>
@@ -91,14 +87,15 @@ export default function Home() {
       </div>
       <div className='border border-[#C5C5CF] w-full'></div>
       {/* Navigation */}
-      <div className="w-full flex justify-center items-center inter">
-        <div className="flex flex-nowrap justify-center noto-serif font-bold">
+      <div className="w-full flex justify-center items-center ">
+        <div className="flex flex-nowrap justify-center font-bold text-[#6D3E28] ">
           {/* <img src="images/rose.png" className="w-auto h-12" style={{ transform: 'scaleX(-1)' }}></img> */}
-          <a href="#couple" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Cặp đôi</a>
-          <a href="#loveStory" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Chuyện tình yêu</a>
-          <a href="#weddingAlbum" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Album hình cưới</a>
-          <a href="#weddingEvent" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Sự kiện cưới</a>
-          <a href="#congratulations" className="px-4 py-2 my-2 text-center hover:bg-gray-200 rounded-md transition-colors duration-300">Mừng cưới</a>
+          <a href="#couple" className="px-4 py-2 text-center hover:text-[#f4cbc6] rounded-md transition-colors duration-300">Cặp đôi</a>
+          <a href="#time" className="px-4 py-2 text-center hover:text-[#f4cbc6] rounded-md transition-colors duration-300">Thời gian tổ chức</a>
+          <a href="#weddingEvent" className="px-4 py-2 text-center hover:text-[#f4cbc6] rounded-md transition-colors duration-300">Sự kiện cưới</a>
+          <a href="#weddingAlbum" className="px-4 py-2 text-center hover:text-[#f4cbc6] rounded-md transition-colors duration-300">Album hình cưới</a>
+
+          <a href="#congratulations" className="px-4 py-2 text-center hover:text-[#f4cbc6] rounded-md transition-colors duration-300">Mừng cưới</a>
           {/* <img src="images/rose.png" className="w-auto h-12"></img> */}
         </div>
       </div>
@@ -118,91 +115,92 @@ export default function Home() {
         opacity: 1,
         // filter: 'brightness(0.5)',
       }} className='fade-animation'>
-  <div style={{ color: 'white', textAlign: 'center' }}>
-  <div className="flex text-lg px-2 sm:px-0 mt-4">
+  <div style={{ color: 'white', textAlign: 'center'}} className='flex flex-col items-center justify-center'>
+    <img src="/images/picture1.png" className='w-full h-auto sm:w-1/2'></img>
+  {/* <div className="flex text-lg px-2 sm:px-0 mt-4">
           <span className="dancing-script text-4xl header-text">{data.chure} & {data.codau}</span>
         </div>
         <div className='flex flex-row items-center justify-center my-4 parisienne'>
           <div className='flex-grow border border-[#fff] mr-2 sm:mr-5'></div>
           <div className='text-[#fff] text-xl px-2 marry-text'>14 Tháng 7 Năm 2024</div>
           <div className='flex-grow border border-[#fff] ml-2 sm:ml-5'></div>
-        </div>
+        </div> */}
   </div>
 </div>
 
-      <div id="couple" className="w-full flex items-center justify-center bg-transparent mt-12">
-        <span className="text-xl sm:text-3xl font-bold text-gray-800 noto-serif ">Giới thiệu cô dâu chú rể</span>
+      <div id="couple" className="w-full flex flex-col items-center justify-center bg-transparent mt-12">
+      <img src="images/rose.png" className='h-auto w-16'></img>
+        <span className="text-xl sm:text-xl font-bold text-black noto-serif ">GIỚI THIỆU </span>
+        <span className="text-xl sm:text-3xl font-bold  noto-serif text-[#6D3E28] mt-4">CÔ DÂU VÀ CHÚ RỂ</span>
       </div>
       <div className="w-full flex items-center justify-center bg-transparent py-8 sm:py-16 px-4 sm:px-48" style={{ height: '80vh' }}>
         <div className='flex flex-col sm:flex-row w-full h-full justify-between items-center px-4 sm:px-12 quicksand'>
           {/* Left */}
-          <div className='flex-1 p-4 h-full border border-white bg-white bg-opacity-10'>
-            <div className='border-[#EF9C66] border-2 h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
-              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719413792/calendar_bg_fu3noc.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-              <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-4 p-4'>
-              <div className="text-lg sm:text-xl font-semibold ">{data.tencodau}</div>
-                <div className='flex w-full text-sm sm:text-md'> Con ông:&nbsp;<div className="font-bold noto-serif">{data.chacodau}</div></div>
-                <div className='flex w-full text-sm sm:text-md'> Con bà:&nbsp;<div className="font-bold noto-serif">{data.mecodau}</div></div>
-                <div className="text-sm sm:text-md">{data.ttcodau}</div>
+          <div className='flex-1 p-4 h-full bg-white bg-opacity-10'>
+            <div className=' h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_2_sua_cliwdh.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 20%' }}>
+              <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-1 p-4'>
+              <div className="text-lg sm:text-xl inter">NGUYỆT HÀ</div>
+                <div className='flex text-sm sm:text-md'> Con ông:&nbsp;<div className="noto-serif">{data.chacodau}</div></div>
+                <div className='flex text-sm sm:text-md'> Con bà:&nbsp;<div className="noto-serif">{data.mecodau}</div></div>
+      
               </div>
             </div>
           </div>
-          <img src='images/fly_heart.png' className='self-center px-4' style={{ maxWidth: '100px', maxHeight: '100px' }}></img>
+          <img src='images/heart_top.png' className='self-center px-4' style={{ maxWidth: '100px', maxHeight: '100px' }}></img>
           {/* Right */}
-          <div className='flex-1 p-4 border border-white h-full bg-white bg-opacity-10'>
-            <div className='border-[#EF9C66] border-2 h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
-              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719413792/calendar_bg_fu3noc.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-              <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-4 p-4'>
-                <div className="text-lg sm:text-xl font-semibold ">{data.tenchure}</div>
-                <div className='flex w-full'> Con ông:&nbsp;<div className="text-sm sm:text-md">{data.chachure}</div></div>
-                <div className='flex w-full'> Con bà:&nbsp;<div className="text-sm sm:text-md">{data.mechure}</div></div>
-                <div className="text-sm sm:text-md">{data.ttchure}</div>
+          <div className='flex-1 p-4  h-full bg-white bg-opacity-10'>
+            <div className=' h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_1_sua_w5kdrv.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 10%' }}>
+              <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-1 p-4'>
+                <div className="text-lg sm:text-xl inter ">ĐĂNG CHUNG</div>
+                <div className='flex text-sm sm:text-md'> Con ông:&nbsp;<div className=" noto-serif">{data.chachure}</div></div>
+                <div className='flex text-sm sm:text-md'> Con bà:&nbsp;<div className=" noto-serif">{data.mechure}</div></div>
+        
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* Countdown */}
-      <div className="w-full flex items-center justify-center bg-[#F6F1F3] pt-8">
-        <span className="text-xl sm:text-3xl font-bold text-gray-800 noto-serif ">Thời gian đám cưới</span>
+      <div id="time" className="w-full flex items-center justify-center bg-[#F6F1F3] pt-8">
+        <div className='flex flex-col items-center'>
+          <img src="images/rose.png" className='h-auto w-24'></img>
+        <span className="text-xl sm:text-2xl font-bold text-gray-800 noto-serif ">THỜI GIAN ĐÁM CƯỚI</span>
+        </div>
       </div>
       <div className="w-full flex items-center justify-center bg-[#F6F1F3] py-4 sm:py-8 px-4 sm:px-48 my-0" style={{ height: 'auto', minHeight: '80vh' }}>
         <div className='flex flex-col sm:flex-row w-full h-full space-y-4 sm:space-y-0 sm:space-x-4'>
-          {/* Left */}
-          <div className='w-full sm:p-12 p-4 border border-white text-[#fff]' >
-            <div className='border-[#ff85a2] border-4 bg-white h-full flex flex-col items-center justify-center space-y-4 p-4 rounded-xl '
-              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719413792/calendar_bg_fu3noc.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-              <div className='parisienne text-3xl'>
-                Save the Date
-              </div>
-              <div className='noto-serif text-xl'>
-                For the wedding of
-              </div>
-              <div className='dancing-script text-3xl'>
-                {data.chure} & {data.codau}
-              </div>
-              <div className='quicksand text-center'>
-                {data.codau} rất mong nhận được lời chúc iu thương của mọi người. Biết ơn vì đã xuất hiện trong websites của {data.codau} ^^
-              </div>
-              {/* <button className='px-4 py-2 bg-[#EF9C66] flex items-center rounded-lg quicksand'>
-                Gửi lời chúc
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 9L15 12M15 12L12 15M15 12L7 12" stroke="#151515" />
-                </svg>
-              </button> */}
-            </div>
-          </div>
-          {/* Right */}
-          <div className='w-full sm:p-12 p-4 border border-white'>
-            <div className='border-[#ff85a2] border-4 bg-white h-full flex flex-col items-center justify-center rounded-xl' style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719413964/z5576430009234_3a624ae6391f0df88b59e629007aaaa0_ygpkex.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                    {/* Right */}
+                    <div className='w-full sm:p-12 p-4 border border-white'>
+            <div className=' bg-white h-full flex flex-col items-center justify-center rounded-xl' style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719496436/z5580215834491_e07381ce51f9295df3293715dd61fc2b_xyncjb.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <Calendar></Calendar>
             </div>
           </div>
+          {/* Left */}
+          <div className='w-full sm:p-12 p-4 border border-white text-[#fff]' >
+            <div className=' bg-white h-full flex flex-col items-center justify-center space-y-4 p-4 rounded-xl '
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719413792/calendar_bg_fu3noc.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                           <div className='noto-serif text-xl'>
+                CÙNG ĐẾM NGƯỢC THỜI GIAN NHÉ
+              </div>
+              <div className='parisienne text-3xl'>
+                Save the Date
+              </div>
+              {/* <div className='dancing-script text-3xl'>
+                {data.chure} & {data.codau}
+              </div> */}
+              <img src="https://res.cloudinary.com/dzm879qpm/image/upload/v1719497094/people_qmtqrm.png " className='w-32 animate-pulse'></img>
+              <CountdownTimer></CountdownTimer>
+           
+            </div>
+          </div>
+
         </div>
       </div>
       {/* Love Story */}
       {/* Timeline */}
-      <div id="loveStory" className="w-full flex flex-col items-center justify-center py-8">
+      {/* <div id="loveStory" className="w-full flex flex-col items-center justify-center py-8">
         <h2 className="text-2xl font-bold mb-4 dancing-script">Our Love Story</h2>
         <div className="flex flex-col items-center justify-center">
           {data.timeline.map((event, index) => (
@@ -215,54 +213,22 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Sự kiện cưới */}
       <div id="weddingEvent" className="w-full flex flex-col items-center justify-center bg-[#F6F1F3] py-8">
         <img src="images/rose.png" className='h-24 w-auto'></img>
-        <div data-aos='fade-in' className="text-center text-3xl font-bold dancing-script">Sự kiện cưới</div>
-        <p data-aos='fade-in' className="text-center mt-4 px-4 quicksand">...Mọi người ghé thăm 2 gia đình để không say không về nhé! Mong mọi người lắm!...</p>
-
-        <div className="w-full flex items-center justify-center bg-[#F6F1F3] py-8 sm:py-16 px-4 text-center quicksand">
-          <div className="flex flex-col sm:flex-row w-full max-w-4xl space-y-4 sm:space-y-0 sm:space-x-4">
-            {/* Left */}
-            <div className="w-full sm:w-1/2 p-4 border border-[#FFC0CB] rounded-xl flex flex-col items-center justify-center space-y-4">
-              <div className="text-lg font-semibold noto-serif">Lễ vu quy</div>
-              <div className="w-48 h-48 relative">
-                <img src="images/codau_vuong.jpg" className="absolute object-cover w-full h-full rounded-lg" alt="Lễ cưới nhà gái" />
-              </div>
-              <div className='flex  '> Tổ chức lúc: &nbsp; <div className='noto-serif text-center font-bold'>{data.thoigian_gai}</div></div>
-              <div className='flex  '> Tại địa chỉ: &nbsp; </div>
-              <div className='text-center noto-serif font-bold'>{data.diachi_gai}</div>
-              <a href="https://maps.app.goo.gl/KTW1VpmT26i7gnhW6" className="rounded-full px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
-                Địa chỉ nhà gái
-              </a>
-            </div>
-            {/* Right */}
-            <div className="w-full sm:w-1/2 p-4 border border-[#FFC0CB] rounded-xl flex flex-col items-center justify-center space-y-4">
-              <div className="text-lg font-semibold noto-serif">Lễ tân hôn</div>
-              <div className="w-48 h-48 relative">
-                <img src="images/chure.jpg" className="absolute object-cover w-full h-full rounded-lg" alt="Lễ cưới nhà trai" />
-              </div>
-              <div className='flex  '> Tổ chức lúc: &nbsp; <div className='noto-serif text-center font-bold'>{data.thoigian_trai}</div></div>
-              <div className='flex  '> Tại địa chỉ: &nbsp; </div>
-              <div className='text-center noto-serif font-bold'>{data.diachi_trai}</div>
-              <a href="https://maps.app.goo.gl/KTW1VpmT26i7gnhW6" className="rounded-full px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
-                Địa chỉ nhà trai
-              </a>
-            </div>
-          </div>
-        </div>
+        <div data-aos='fade-in' className="text-center text-3xl font-bold noto-serif ">Sự kiện cưới</div>
+        <p data-aos='fade-in' className="text-center mt-4 px-4 quicksand">Rất mong sự hiện diện của các bạn trong ngày vui của chúng mình ^^</p>
         {/* Tiệc thành hôn */}
-        <div className="w-full sm:w-1/2 p-4 border border-[#FFC0CB] rounded-xl flex flex-col items-center justify-center space-y-4">
-          <div className="text-lg font-semibold noto-serif">Tiệc thành hôn</div>
-          <div className="w-48 h-48 relative">
-            <img src="images/chure.jpg" className="absolute object-cover w-full h-full rounded-lg" alt="Lễ cưới nhà trai" />
-          </div>
-          <div className='flex  '> Tổ chức lúc: &nbsp; <div className='noto-serif text-center font-bold'>{data.thoigian_gai}</div></div>
+        <div className="w-full sm:w-1/2 p-4 border border-[#FFC0CB] rounded-xl flex flex-col items-center justify-center space-y-2 mt-4">
+          <div className="text-lg font-semibold noto-serif">TIỆC THÀNH HÔN</div>
+
+            <img src="/images/diachi.jpg" className="w-1/2 rounded-lg" alt="Tiệc cưới" />
+          <div className='flex  '> Tổ chức lúc: &nbsp; <div className='noto-serif text-center font-bold text-[#6D3E28] '>{data.thoigian_gai}</div></div>
           <div className='flex  '> Tại địa chỉ: &nbsp; </div>
-          <div className='text-center noto-serif font-bold'>{data.diachi_gai}</div>
-          <a href="https://maps.app.goo.gl/KTW1VpmT26i7gnhW6" className="rounded-full px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
+          <div className='text-center noto-serif font-bold w-full text-[#6D3E28] '>Trung tâm tiệc cưới Louis Center - Sảnh Diamond 1<br></br> 38 Lâm Văn Bền, phường Tân Thuận Tây, Quận 7, Thành Phố Hồ Chí Minh</div>
+          <a href="https://maps.app.goo.gl/4xAnobPCpxLuuAPD6" className="rounded-full px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
             Địa chỉ tiệc cưới
           </a>
         </div>
@@ -271,25 +237,7 @@ export default function Home() {
       {/* Album */}
       <div id="weddingAlbum"></div>
       <WeddingAlbum></WeddingAlbum>
-      {/* Video */}
-      <div className='flex flex-col mt-4 items-center w-full'>
-      <h2 className="w-full text-2xl font-bold text-center dancing-script">Wedding Video</h2>
-      <div className="album-description w-full text-center p-4">
-        <p className="text-lg">{data.videodescription}</p>
-      </div>
-      </div>
-      <div id="weddingVideo"></div>
-      <div className="w-full h-screen">
-  <iframe src="https://www.youtube.com/embed/YQJnHBSGd6A" title="Đám Cưới Nguyệt Hà - Đăng Chung" 
-    className="w-full h-full" frameBorder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-</div>
-<div className='flex flex-col items-center w-full'>
-      <div className="album-description w-full text-center p-4">
-        <p className="text-lg">Tắt một nhạc nếu bị trùng nhau nhé {"<3"} </p>
-      </div>
-      </div>
+
 <div id="congratulations" className="w-full flex flex-col items-center justify-center bg-[#F6F1F3] py-8">
         <img src="images/rose.png" className='h-24 w-auto'></img>
         <div className="text-center text-3xl font-bold dancing-script">Hộp mừng cưới</div>
@@ -297,25 +245,23 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row w-full max-w-4xl space-y-4 sm:space-y-0 sm:space-x-4">
             {/* Left */}
             <div data-aos="fade-up" className="w-full sm:w-1/2 p-4 border border-[#C89D9C] rounded-xl flex flex-col items-center justify-center space-y-4 text-sm sm:text-base">
-              <div className="text-lg font-semibold">Mừng cưới đến cô dâu</div>
+              <div className="text-lg font-semibold text-[#6D3E28]">Mừng cưới đến cô dâu</div>
               <div className="w-48 h-48 relative">
                 <img src="images/qrcode_codau.jpg" className="absolute object-cover w-full h-full" alt="Mã cô dâu" />
               </div>
               <div className='text-center flex gap-1'> Ngân hàng: <div className="font-medium">{data.nganhang_codau.nganhang}</div></div>
               <div className='text-center flex gap-1'> Tên tài khoản: <div className="font-medium">{data.nganhang_codau.tentaikhoan}</div></div>
               <div className='text-center flex gap-1'> Số tài khoản: <div className="font-medium">{data.nganhang_codau.sotaikhoan}</div></div>
-              <div className='text-center flex gap-1'> Chi nhánh: <div className="font-medium">{data.nganhang_codau.chinhanh}</div></div>
             </div>
             {/* Right */}
             <div data-aos="fade-up" className="w-full sm:w-1/2 p-4 border border-[#C89D9C] rounded-xl flex flex-col items-center justify-center space-y-4 text-sm sm:text-base">
-              <div className="text-lg font-semibold">Mừng cưới đến chú rể</div>
+              <div className="text-lg font-semibold text-[#6D3E28]">Mừng cưới đến chú rể</div>
               <div className="w-48 h-48 relative">
-                <img src="images/qrcode_codau.jpg" className="absolute object-cover w-full h-full" alt="Mã chú rể" />
+                <img src="images/qrcode_chure.jpg" className="absolute object-cover w-full h-full" alt="Mã chú rể" />
               </div>
               <div className='text-center flex gap-1'> Ngân hàng: <div className="font-medium">{data.nganhang_chure.nganhang}</div></div>
               <div className='text-center flex gap-1'> Tên tài khoản: <div className="font-medium">{data.nganhang_chure.tentaikhoan}</div></div>
               <div className='text-center flex gap-1'> Số tài khoản: <div className="font-medium">{data.nganhang_chure.sotaikhoan}</div></div>
-              <div className='text-center flex gap-1'> Chi nhánh: <div className="font-medium">{data.nganhang_chure.chinhanh}</div></div>
             </div>
           </div>
         </div>
@@ -323,13 +269,13 @@ export default function Home() {
       <div className='flex flex-col items-center justify-center' style={{ 
   position: 'relative', // Ensure zIndex is effective
   height: '70vh',
-  backgroundImage: `url("https://res.cloudinary.com/dzm879qpm/image/upload/v1719460265/footer_bg_i7hkld.jpg")`,
+  backgroundImage: `url("https://res.cloudinary.com/dzm879qpm/image/upload/v1719502294/Picture3_mf8tn3.png")`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   zIndex: 1, // Lower zIndex for the parent
 }}>
-  <div style={{
+  <div className="animate-pulse" style={{
     position: 'relative',
     width: '300px',
     height: '300px',
@@ -349,7 +295,22 @@ export default function Home() {
     <div className='text-[#000000] text-4xl px-2'>Thank you !</div>
   </div>
 </div>
-
+{/* Video */}
+<div className='flex flex-col mt-4 items-center w-full'>
+      <h2 className="w-full text-2xl font-bold text-center noto-serif mb-4 ">Wedding Video</h2>
+      </div>
+      <div id="weddingVideo"></div>
+      <div className="w-full h-screen">
+  <iframe src="https://www.youtube.com/embed/YQJnHBSGd6A" title="Đám Cưới Nguyệt Hà - Đăng Chung" 
+    className="w-full h-full" frameBorder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+</div>
+<div className='flex flex-col items-center w-full'>
+      <div className="album-description w-full text-center p-4">
+        <p className="text-lg">Tắt một nhạc nếu bị trùng nhau nhé {"<3"} </p>
+      </div>
+      </div>
       <footer style={{ width: '100%', textAlign: 'center', padding: '10px', backgroundColor: '#f0f0f0' }}>
         Designed by <span className="font-medium">em Sơn</span>
       </footer>

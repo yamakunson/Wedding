@@ -39,20 +39,20 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex justify-center space-x-4 py-4 noto-serif ">
-      <div className="text-center">
-        <div className="text-2xl font-bold">{timeLeft.days}</div>
+      <div className="text-center border border-white p-2 rounded-md" style={{ backdropFilter: 'blur(20px)' }}>
+        <div className="text-xl font-bold">{timeLeft.days}</div>
         <div>Ngày</div>
       </div>
-      <div className="text-center">
-        <div className="text-2xl font-bold">{timeLeft.hours}</div>
+      <div className="text-center border border-white p-2 rounded-md" style={{ backdropFilter: 'blur(20px)' }}>
+        <div className="text-xl font-bold">{timeLeft.hours}</div>
         <div>Giờ</div>
       </div>
-      <div className="text-center">
-        <div className="text-2xl font-bold">{timeLeft.minutes}</div>
+      <div className="text-center border border-white p-2 rounded-md" style={{ backdropFilter: 'blur(20px)' }}>
+        <div className="text-xl font-bold">{timeLeft.minutes}</div>
         <div>Phút</div>
       </div>
-      <div className="text-center">
-        <div className="text-2xl font-bold">{timeLeft.seconds}</div>
+      <div className="text-center border border-white p-2 rounded-md" style={{ backdropFilter: 'blur(20px)' }}>
+        <div className="text-xl font-bold">{timeLeft.seconds}</div>
         <div>Giây</div>
       </div>
     </div>

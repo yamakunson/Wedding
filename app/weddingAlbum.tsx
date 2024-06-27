@@ -1,34 +1,6 @@
 import { Fancybox } from '@fancyapps/ui/';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
-import { useState } from 'react';
-
-Fancybox.bind('[data-fancybox="gallery"]', {
-  compact: false,
-  idle: false,
-
-  animated: false,
-  showClass: false,
-  hideClass: false,
-
-  dragToClose: false,
-  contentClick: false,
-
-  Images: {
-    zoom: false,
-  },
-
-  Toolbar: {
-    display: {
-      left: [],
-      middle: ['infobar'],
-      right: ['close'],
-    },
-  },
-
-  Thumbs: {
-    type: 'classic',
-  },
-});
+import { useState, useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 const images = [
@@ -61,11 +33,40 @@ const images = [
   
 ];
 const data = {
-  description: `Vì yêu, ta có thể cố gắng. Và cố gắng để tạo dáng chụp ảnh đã chứng minh điều đó. 
-  Album hình cưới với sự cố gắng của diễn viên hạng A Nguyễn Minh^^"`,
+  description: `'Hôn nhân là chuyện cả đời, yêu người vừa ý cưới người mình thương'`,
 }
 function WeddingAlbum() {
   const [showFullAlbum, setShowFullAlbum] = useState(false);
+
+  useEffect(() => {
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      compact: false,
+      idle: false,
+      animated: false,
+      showClass: false,
+      hideClass: false,
+      dragToClose: false,
+      contentClick: false,
+      Images: {
+        zoom: false,
+      },
+      Toolbar: {
+        display: {
+          left: [],
+          middle: ['infobar'],
+          right: ['close'],
+        },
+      },
+      Thumbs: {
+        type: 'classic',
+      },
+    });
+
+    // Cleanup Fancybox bindings when the component unmounts
+    return () => {
+      Fancybox.destroy();
+    };
+  }, []); // Empty dependency array means this effect runs once on mount
 
   // Toggle showing the full album
   const handleShowFullAlbum = () => {
@@ -74,17 +75,19 @@ function WeddingAlbum() {
 
   return (
     <div className='flex flex-col mt-4 items-center w-full'>
-      <h2 className="w-full text-2xl font-bold text-center dancing-script">Wedding Album</h2>
+      <img src="images/rose.png" className='h-auto w-16'></img>
+      <h2 className="w-full text-2xl font-bold text-center noto-serif ">Wedding Album</h2>
       <div className="album-description w-full text-center p-4">
         <p className="text-lg">{data.description}</p>
       </div>
-        <div className="grid grid-cols-3 gap-4">
-          {images.slice(0, showFullAlbum ? images.length : 5).map((image) => (
-            <a key={image.id} data-fancybox="gallery" href={image.src}>
-              <img data-aos="fade-up" src={image.src} alt={image.alt} className="w-full h-auto" />
-            </a>
-          ))}
-        </div>
+
+<div className="grid grid-cols-3 gap-4">
+  {images.map((image, index) => (
+    <a key={image.id} data-fancybox="gallery" href={image.src} className={index >= 5 && !showFullAlbum ? 'hidden' : ''}>
+      <img data-aos="fade-up" src={image.src} alt={image.alt} className="w-full h-auto" />
+    </a>
+  ))}
+</div>
       <button onClick={handleShowFullAlbum} className="rounded-full my-4 px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
         {showFullAlbum ? "Xem ít hơn" : "Xem toàn bộ"}
       </button>
