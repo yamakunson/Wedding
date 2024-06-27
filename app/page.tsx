@@ -48,7 +48,7 @@ export default function Home() {
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_11_sua_ehbbky.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_12_sua_njsupy.jpg",
     "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457603/_13_sua_jurkwx.jpg",
-    // Add more image paths as needed
+
   ];
   const images = albumImages.map(image => `url("${image}")`);
   const [currentImage, setCurrentImage] = useState(images[0]);
@@ -111,12 +111,12 @@ export default function Home() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        transition: 'background-image 2s ease-in-out',
+        transition: '2s ease-in-out',
         opacity: 1,
         // filter: 'brightness(0.5)',
       }} className='fade-animation'>
   <div style={{ color: 'white', textAlign: 'center'}} className='flex flex-col items-center justify-center'>
-    <img src="https://res.cloudinary.com/dzm879qpm/image/upload/v1719503029/Picture1_tvilbe.png" className='w-full h-auto sm:w-1/2'></img>
+    <img src="https://res.cloudinary.com/dzm879qpm/image/upload/v1719503931/Picture1_ifalsf.png" className='w-full h-auto sm:w-1/2'></img>
   </div>
 </div>
 
