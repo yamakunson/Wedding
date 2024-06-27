@@ -1,5 +1,34 @@
-import React , {useState}from 'react';
-import Fancybox from './Fancybox'; // Adjust the import path according to your project structure
+import { Fancybox } from '@fancyapps/ui/';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import { useState } from 'react';
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  compact: false,
+  idle: false,
+
+  animated: false,
+  showClass: false,
+  hideClass: false,
+
+  dragToClose: false,
+  contentClick: false,
+
+  Images: {
+    zoom: false,
+  },
+
+  Toolbar: {
+    display: {
+      left: [],
+      middle: ['infobar'],
+      right: ['close'],
+    },
+  },
+
+  Thumbs: {
+    type: 'classic',
+  },
+});
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 const images = [
@@ -49,15 +78,13 @@ function WeddingAlbum() {
       <div className="album-description w-full text-center p-4">
         <p className="text-lg">{data.description}</p>
       </div>
-      <Fancybox options={{}}>
         <div className="grid grid-cols-3 gap-4">
           {images.slice(0, showFullAlbum ? images.length : 5).map((image) => (
-            <a key={image.id} data-fancybox="wedding-album" href={image.src}>
+            <a key={image.id} data-fancybox="gallery" href={image.src}>
               <img data-aos="fade-up" src={image.src} alt={image.alt} className="w-full h-auto" />
             </a>
           ))}
         </div>
-      </Fancybox>
       <button onClick={handleShowFullAlbum} className="rounded-full my-4 px-4 py-2 border border-[#C89D9C] hover:bg-[#FFFEEE]">
         {showFullAlbum ? "Xem ít hơn" : "Xem toàn bộ"}
       </button>

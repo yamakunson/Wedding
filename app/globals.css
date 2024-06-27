@@ -18,11 +18,11 @@
   font-family: var(--font-Quicksand);
 }
 .transition-transform {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
 .transition-opacity {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1 ease-in-out;
 }
 html {
   scroll-behavior: smooth;
