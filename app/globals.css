@@ -105,6 +105,11 @@ html {
   background-position: center; /* Center the background image */
   animation: pulse 1s infinite;
 }
+@media (max-width: 640px){ 
+  .bgcodau {
+    height: 160vh; /* Set the height of the line */
+  }
+}
 @media (max-width: 768px) {
   .timeline-container::before {
     display: none; /* Hide the line on smaller screens if needed */

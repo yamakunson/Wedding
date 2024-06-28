@@ -44,10 +44,10 @@ export default function Home() {
     }
   }
   const albumImages = [
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457601/_3_sua_uxpo1l.jpg",
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_11_sua_ehbbky.jpg",
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457605/_12_sua_njsupy.jpg",
-    "https://res.cloudinary.com/dzm879qpm/image/upload/v1719457603/_13_sua_jurkwx.jpg",
+    "/images/_3_sua.jpg",
+    "/images/_11_sua.jpg",
+    "/images/_12_sua.jpg",
+    "/images/_13_sua.jpg",
 
   ];
   const images = albumImages.map(image => `url("${image}")`);
@@ -120,30 +120,29 @@ export default function Home() {
   </div>
 </div>
 
-      <div id="couple" className="w-full flex flex-col items-center justify-center bg-transparent mt-12">
+      <div id="couple" className="w-full flex flex-col items-center justify-center bg-[#F6F1F3] mt-12">
       <img src="images/rose.png" className='h-auto w-16'></img>
         <span className="text-xl sm:text-xl font-bold text-black noto-serif ">GIỚI THIỆU </span>
         <span className="text-xl sm:text-3xl font-bold  noto-serif text-[#6D3E28] mt-4">CÔ DÂU VÀ CHÚ RỂ</span>
       </div>
-      <div className="w-full flex items-center justify-center bg-transparent py-8 sm:py-16 px-4 sm:px-48" style={{ height: '80vh' }}>
-        <div className='flex flex-col sm:flex-row w-full h-full justify-between items-center px-4 sm:px-12 quicksand'>
+<div className="w-full flex items-center justify-center bg-[#F6F1F3] py-4 sm:py-8 px-4 sm:px-48 my-0 ">
+  <div className='flex flex-col sm:flex-row w-full space-y-4 sm:space-y-0 sm:space-x-4 justify-center'>
           {/* Left */}
-          <div className='flex-1 p-4 h-full bg-white bg-opacity-10'>
+          <div className='flex-1 p-4 white bg-opacity-10 '>
             <div className=' h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
-              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_2_sua_cliwdh.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 20%' }}>
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_2_sua_cliwdh.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 20%', height:"60vh" }}>
               <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-1 p-4'>
               <div className="text-lg sm:text-xl inter">NGUYỆT HÀ</div>
                 <div className='flex text-sm sm:text-md'> Con ông:&nbsp;<div className="noto-serif">{data.chacodau}</div></div>
                 <div className='flex text-sm sm:text-md'> Con bà:&nbsp;<div className="noto-serif">{data.mecodau}</div></div>
-      
               </div>
             </div>
           </div>
           <img src='images/heart_top.png' className='self-center px-4' style={{ maxWidth: '100px', maxHeight: '100px' }}></img>
           {/* Right */}
-          <div className='flex-1 p-4  h-full bg-white bg-opacity-10'>
+          <div className='flex-1 p-4 bg-white bg-opacity-10' style={{ height: '80vh' }}>
             <div className=' h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
-              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_1_sua_w5kdrv.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 10%' }}>
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_1_sua_w5kdrv.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 10%', height:"60vh"  }}>
               <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-1 p-4'>
                 <div className="text-lg sm:text-xl inter ">ĐĂNG CHUNG</div>
                 <div className='flex text-sm sm:text-md'> Con ông:&nbsp;<div className=" noto-serif">{data.chachure}</div></div>
