@@ -140,7 +140,7 @@ export default function Home() {
           </div>
           <img src='images/heart_top.png' className='self-center px-4' style={{ maxWidth: '100px', maxHeight: '100px' }}></img>
           {/* Right */}
-          <div className='flex-1 p-4 bg-white bg-opacity-10' style={{ height: '80vh' }}>
+          <div className='flex-1 p-4 bg-white bg-opacity-10'>
             <div className=' h-full rounded-xl bg-white bg-opacity-100 flex flex-col justify-end'
               style={{ backgroundImage: "url('https://res.cloudinary.com/dzm879qpm/image/upload/v1719457602/_1_sua_w5kdrv.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 10%', height:"60vh"  }}>
               <div data-aos='fade-in' className='flex flex-col text-[#fff] items-center space-y-1 p-4'>
